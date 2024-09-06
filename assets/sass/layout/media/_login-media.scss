@@ -1,0 +1,22 @@
+@use "../media-mixin/media-mixin" as mda;
+
+.container {
+  .login-container {
+    .col-md-6 {
+      form {
+        .form-input-box {
+          @include mda.mq-max-992-min-768 {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 0.2rem !important;
+          }
+          @include mda.mq-max-400 {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 0.2rem !important;
+          }
+        }
+      }
+    }
+  }
+}

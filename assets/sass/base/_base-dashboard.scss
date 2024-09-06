@@ -1,0 +1,26 @@
+body {
+  font-family: "poppins", sans-serif;
+  background: map-get($colors, clr-light-4);
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+  &:hover {
+    @extend a;
+  }
+  &:focus {
+    @extend a;
+  }
+}
+
+ul {
+  ul {
+    a {
+      font-size: 0.9em !important;
+      padding-left: 30px !important;
+    }
+  }
+}

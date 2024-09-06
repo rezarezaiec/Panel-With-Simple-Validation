@@ -1,0 +1,7 @@
+body {
+  @include df-jc-ac;
+  height: 100vh;
+  margin: 0;
+  font: 500 14px "Poppins";
+  background-color: map-get($colors, clr-light-1);
+}

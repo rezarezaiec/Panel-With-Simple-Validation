@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "poppins";
+  src: url("../../public/fonts/Poppins/Poppins-Medium.ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+.fw-500 {
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../../public/fonts/Poppins/Poppins-Light.ttf");
+  font-weight: 300;
+  font-display: swap;
+}
+.fw-300 {
+  font-weight: 300;
+}

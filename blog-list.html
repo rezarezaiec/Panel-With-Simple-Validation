@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>List Blog</title>
+
+  <!-- Plugins css -->
+  <link href="./assets/sass/vendors/bootstrap-5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Style css -->
+  <link rel="stylesheet" href="./assets/css/fonts.css" />
+  <link rel="stylesheet" href="./assets/sass/master-dashboard.min.css" />
+</head>
+
+<body>
+  <div class="wrapper d-flex w-100">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar bg-white text-dark position-fixed top-0 start-0 vh-100 z-2 overflow-auto">
+      <!-- Sidebar header -->
+      <div class="sidebar-header text-dark d-flex align-items-center bg-light rounded px-4 py-3">
+        <!-- User Info -->
+        <div class="profile-container d-flex align-items-center justify-content-center gap-3">
+          <div class="profile-image d-flex justify-content-center align-items-center rounded-circle">
+            <img src="./public/images/logo.png" alt="Profile User" class="img-fluid rounded-circle" />
+          </div>
+          <div class="profile-details d-flex flex-column align-items-center justify-content-center">
+            <span class="profile-name fw-500">Salatin Team</span>
+            <span class="profile-role">Administrator</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar menu -->
+      <ul class="sidebar-menu list-unstyled components mt-2">
+        <!-- Dashboard link -->
+        <li class="menu-item px-2">
+          <a href="./dashboard.html" class="menu-link">
+            <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+          </a>
+        </li>
+        <!-- Menu with submenu -->
+        <li class="menu-item px-2">
+          <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">
+            <i class="fas fa-list me-2"></i>Blog management
+          </a>
+          <!-- Submenu -->
+          <ul class="collapse list-unstyled submenu" id="homeSubmenu">
+            <!-- Submenu items -->
+            <li class="submenu-item">
+              <a href="./blog-add.html" class="submenu-link">
+                <i class="fas fa-angle-right me-2"></i>Create New Blogs
+              </a>
+            </li>
+            <li class="submenu-item">
+              <a href="./blog-list.html" class="submenu-link">
+                <i class="fas fa-angle-right me-2"></i>List Blogs
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main class="main position-absolute top-0 end-0" id="content">
+      <!-- Main Header -->
+      <header id="headerContent" class="row header g-0 p-0 m-0 px-2 align-items-center border-0 rounded-0">
+        <div class="col-6">
+          <div class="d-flex align-items-center">
+            <!-- Sidebar toggle button -->
+            <!-- Sidebar toggle button -->
+            <button type="button" id="sidebarCollapse" class="btn toggle-button-header border-0">
+              <i class="fas fa-bars icon-menu"></i>
+            </button>
+
+            <!-- Page title -->
+            <div class="header-title fw-bold position-relative">
+              <span>Page Title</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid my-5 px-md-4 px-lg-5">
+        <h2 class="mb-4 text-center">Blog List</h2>
+
+        <!-- Add New Blog Button -->
+        <div class="d-flex justify-content-start mb-2">
+          <a href="./blog-add.html" class="btn btn-primary">Add New Blog</a>
+        </div>
+
+        <!-- Blog List Table -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <!-- Responsive Table Wrapper -->
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Example Row 1 -->
+                  <tr>
+                    <td>1</td>
+                    <td>How to Learn Bootstrap</td>
+                    <td>John Doe</td>
+                    <td>Web Development</td>
+                    <td>2024-08-23</td>
+                    <td>
+                      <span class="badge bg-success p-1">Published</span>
+                    </td>
+                    <td>
+                      <div class="d-flex flex-column flex-md-row gap-2">
+                        <a href="./blog-edit.html" class="btn btn-sm btn-outline-primary"><i
+                            class="fas fa-edit"></i></a>
+                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#deleteModal1">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Example Row 2 -->
+                  <tr>
+                    <td>2</td>
+                    <td>Understanding JavaScript</td>
+                    <td>Jane Smith</td>
+                    <td>Programming</td>
+                    <td>2024-08-22</td>
+                    <td>
+                      <span class="badge bg-warning p-1 text-dark">Draft</span>
+                    </td>
+                    <td>
+                      <div class="d-flex flex-column flex-md-row gap-2">
+                        <a href="./blog-edit.html" class="btn btn-sm btn-outline-primary"><i
+                            class="fas fa-edit"></i></a>
+                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#deleteModal2">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Example Row 3 -->
+                  <tr>
+                    <td>2</td>
+                    <td>Understanding JavaScript</td>
+                    <td>Jane Smith</td>
+                    <td>Programming</td>
+                    <td>2024-08-22</td>
+                    <td>
+                      <span class="badge bg-warning p-1 text-dark">Draft</span>
+                    </td>
+                    <td>
+                      <div class="d-flex flex-column flex-md-row gap-2">
+                        <a href="./blog-edit.html" class="btn btn-sm btn-outline-primary"><i
+                            class="fas fa-edit"></i></a>
+                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#deleteModal2">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Example Row 4 -->
+                  <tr>
+                    <td>2</td>
+                    <td>Understanding JavaScript</td>
+                    <td>Jane Smith</td>
+                    <td>Programming</td>
+                    <td>2024-08-22</td>
+                    <td>
+                      <span class="badge bg-warning p-1 text-dark">Draft</span>
+                    </td>
+                    <td>
+                      <div class="d-flex flex-column flex-md-row gap-2">
+                        <a href="./blog-edit.html" class="btn btn-sm btn-outline-primary"><i
+                            class="fas fa-edit"></i></a>
+                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#deleteModal2">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- More rows as needed -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Confirmation Modal Example for Row 1 -->
+      <div class="modal fade" id="deleteModal1" tabindex="-1" aria-labelledby="deleteModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel1">
+                Confirm Delete
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete "How to Learn Bootstrap"?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Confirmation Modal Example for Row 2 -->
+      <div class="modal fade" id="deleteModal2" tabindex="-1" aria-labelledby="deleteModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel2">
+                Confirm Delete
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete "Understanding JavaScript"?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/sass/vendors/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/dashborad-saidebar.js"></script>
+</body>
+
+</html>

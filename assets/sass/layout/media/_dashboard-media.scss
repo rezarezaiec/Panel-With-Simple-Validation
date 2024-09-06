@@ -1,0 +1,43 @@
+@use "../media-mixin/media-mixin" as mda;
+
+@include mda.mq-min-768 {
+  .wrapper {
+    .sidebar {
+      .sidebar-menu {
+        .menu-item {
+          a {
+            &:hover {
+              color: map-get($colors, clr-white);
+              background-color: map-get($colors, clr-purple-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include mda.mq-max-768 {
+  .wrapper {
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      margin-left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 3;
+      &.active {
+        transform: translateX(0);
+      }
+    }
+    #content {
+      width: 100%;
+      transition: margin-left 0.3s ease;
+      &.active {
+        margin-left: 250px;
+      }
+    }
+  }
+}

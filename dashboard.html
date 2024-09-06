@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Dashboard</title>
+
+  <!-- Plugins css -->
+  <link href="./assets/sass/vendors/bootstrap-5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Style css -->
+  <link rel="stylesheet" href="./assets/css/fonts.css" />
+  <link rel="stylesheet" href="./assets/sass/master-dashboard.min.css" />
+</head>
+
+<body>
+  <div class="wrapper d-flex w-100">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar bg-white text-dark position-fixed top-0 start-0 vh-100 z-2 overflow-auto">
+      <!-- Sidebar header -->
+      <div class="sidebar-header text-dark d-flex align-items-center bg-light rounded px-4 py-3">
+        <!-- User Info -->
+        <div class="profile-container d-flex align-items-center justify-content-center gap-3">
+          <div class="profile-image d-flex justify-content-center align-items-center rounded-circle">
+            <img src="./public/images/logo.png" alt="Profile User" class="img-fluid rounded-circle" />
+          </div>
+          <div class="profile-details d-flex flex-column align-items-center justify-content-center">
+            <span class="profile-name fw-500">Salatin Team</span>
+            <span class="profile-role">Administrator</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar menu -->
+      <ul class="sidebar-menu list-unstyled components mt-2">
+        <!-- Dashboard link -->
+        <li class="menu-item px-2">
+          <a href="./dashboard.html" class="menu-link">
+            <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+          </a>
+        </li>
+        <!-- Menu with submenu -->
+        <li class="menu-item px-2">
+          <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">
+            <i class="fas fa-list me-2"></i>Blog management
+          </a>
+          <!-- Submenu -->
+          <ul class="collapse list-unstyled submenu" id="homeSubmenu">
+            <!-- Submenu items -->
+            <li class="submenu-item">
+              <a href="./blog-add.html" class="submenu-link">
+                <i class="fas fa-angle-right me-2"></i>Create New Blogs
+              </a>
+            </li>
+            <li class="submenu-item">
+              <a href="./blog-list.html" class="submenu-link">
+                <i class="fas fa-angle-right me-2"></i>List Blogs
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main class="main position-absolute top-0 end-0" id="content">
+      <!-- Main Header -->
+      <header id="headerContent" class="row header g-0 p-0 m-0 px-2 align-items-center border-0 rounded-0">
+        <div class="col-6">
+          <div class="d-flex align-items-center">
+            <!-- Sidebar toggle button -->
+            <!-- Sidebar toggle button -->
+            <button type="button" id="sidebarCollapse" class="btn toggle-button-header border-0">
+              <i class="fas fa-bars icon-menu"></i>
+            </button>
+
+            <!-- Page title -->
+            <div class="header-title fw-bold position-relative">
+              <span>Page Title</span>
+            </div>
+          </div>
+        </div>
+      </header>
+    </main>
+  </div>
+
+  <script src="./assets/sass/vendors/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/dashborad-saidebar.js"></script>
+</body>
+
+</html>

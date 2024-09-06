@@ -1,0 +1,41 @@
+@use "./media-mixin/media-mixin" as mda;
+
+.container {
+  .otp-container {
+    width: clamp(50%, 100%, 550px);
+    background-color: map-get($colors, clr-white);
+    box-shadow: 0 4px 10px map-get($colors, clr-shadow-1);
+    overflow: hidden;
+    .col-12 {
+      .otp-form {
+        form {
+          .otp-inputs {
+            @include df-jc-ac;
+            gap: 10px;
+            margin-bottom: 20px;
+            .otp-input {
+              width: 15%;
+              height: 50px;
+              font-size: 1.5rem;
+              border: 1px solid map-get($colors, clr-light-3);
+              border-radius: 5px;
+              &:focus {
+                outline: none;
+                border-color: map-get($colors, clr-purple-1);
+                box-shadow: 0 0 0 2px map-get($colors, clr-shadow-2);
+              }
+            }
+          }
+          .form-btn {
+            background-color: map-get($colors, clr-purple-1);
+            @include mda.mq-min-992 {
+              &:hover {
+                background: map-get($colors, clr-purple-2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

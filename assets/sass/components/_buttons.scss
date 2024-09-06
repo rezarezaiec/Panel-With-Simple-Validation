@@ -1,0 +1,39 @@
+@use "../layout/media-mixin/media-mixin" as mda;
+
+.container {
+  .login-container {
+    .col-md-6 {
+      .login-form {
+        form {
+          .form-btn {
+            background-color: map-get($colors, clr-purple-1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mda.mq-min-992 {
+  .container {
+    .login-container {
+      .col-md-6 {
+        form {
+          .form-btn {
+            &:hover {
+              background: map-get($colors, clr-purple-2);
+            }
+          }
+          .form-link {
+            .btn {
+              &:hover {
+                color: map-get($colors, clr-white);
+                background: map-get($colors, clr-purple-2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

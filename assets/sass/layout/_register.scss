@@ -1,0 +1,55 @@
+.container {
+  .login-container {
+    width: clamp(50%, 100%, 1100px);
+    background-color: map-get($colors, clr-white);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px map-get($colors, clr-shadow-1);
+    overflow: hidden;
+    .col-md-6 {
+      &:first-child {
+        .login-form {
+          form {
+            .form-input {
+              .form-control {
+                padding-right: 40px;
+                &:focus {
+                  outline: none;
+                  border-color: map-get($colors, clr-purple-1);
+                  box-shadow: 0 0 0 2px map-get($colors, clr-shadow-2);
+                }
+                &::placeholder {
+                  font-size: 0.8rem;
+                }
+              }
+            }
+            .form-input-box {
+              @include df-jsb-ac;
+            }
+          }
+        }
+      }
+      &:last-child {
+        .login-image {
+          @include df-jc-ac;
+          background-color: map-get($colors, clr-light-2);
+          .circle{
+            background-color: map-get($colors, clr-purple-1);
+            width: 170px;
+            height: 170px;
+            box-shadow: 0 20px 40px map-get($colors, clr-shadow-3);
+          }
+          &::after{
+            content: "";
+            border-radius: 0 0 150px 150px;
+            position: absolute;
+            display: block;
+            width: 200px;
+            height: 100px;
+            backdrop-filter: blur(11px);
+            top: 50%;
+          }
+        }
+      }
+    }
+  }
+}
