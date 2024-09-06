@@ -1,5 +1,5 @@
 # Preview
-![Project preview](./preview-design/preview.gif "Project Preview")
+![Project preview](./Preview-design/preview.gif "Project Preview")
 
 # Basic Admin Panel Project
 This project is a simple admin panel with login and register pages, including basic form validation.
